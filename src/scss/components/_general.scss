@@ -1,15 +1,33 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+main {
   font-size: 1rem;
-  font-family: sans-serif;
+  font-family: "Roboto";
+  color: white;
+}
+h1 {
+  font-size: 5rem;
+  text-shadow: 3px 3px rgba(50, 50, 50, 0.5);
+}
+p {
+  margin: 1rem 1rem 2rem 1rem;
+  color: black;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 .App {
-  background-image: url("../images/cold-bg.webp");
+  background-image: linear-gradient(lightblue, black);
   background-size: cover;
   background-position: bottom;
   position: relative;
+  transition: 0.4s ease-in;
+}
+.App.cold {
+  background-image: url("../images/cold-bg.webp");
+  transition: 0.4s ease-in;
 }
 .App.warm {
   background-image: url("../images/warm-bg.webp");
+  transition: 0.4s ease-out;
 }
 main {
   min-height: 100vh;
