@@ -1,0 +1,16 @@
+* {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+.App {
+  background-image: url("../images/cold-bg.webp");
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+}
+.App.warm {
+  background-image: url("../images/warm-bg.webp");
+}
+main {
+  min-height: 100vh;
+}
