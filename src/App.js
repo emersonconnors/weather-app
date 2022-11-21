@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./scss/styles.css";
 
 const mapApi = {
@@ -7,6 +7,21 @@ const mapApi = {
 };
 
 function App() {
+  const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState([]);
+
+  const search = (evt) => {
+    if (evt.key === "Enter") {
+      fetch(`${mapApi.base}weather?q=${query}&units=metric&APPID=${mapApi.key}`)
+        .then((res) => res.json())
+        .then((result) => {
+          setWeather(result);
+          setQuery("");
+          console.log(result);
+        });
+    }
+  };
+
   const dateBuilder = (d) => {
     let months = [
       "January",
@@ -41,19 +56,50 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div
+      className={
+        typeof weather.main != "undefined"
+          ? weather.main.temp >= 16
+            ? "App warm"
+            : "App cold "
+          : "App"
+      }
+    >
       <main>
         <div className="search-box">
-          <input type="text" className="search-bar" placeholder="Search" />
+          <h1>Weather Forecast</h1>
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Type a city name and press enter."
+            onChange={(e) => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
+          />
+          <p>Please seperate cities and countries with a comma.</p>
         </div>
-        <div className="location-box">
-          <div className="location">Vancouver, BC</div>
-          <div className="date">{dateBuilder(new Date())}</div>
-        </div>
-        <div className="weather-box">
-          <div className="temp">0</div>
-          <div className="weather"></div>
-        </div>
+        {typeof weather.main != "undefined" ? (
+          <div>
+            <div className="location-box">
+              <div className="location">
+                {weather.name}, {weather.sys.country}
+              </div>
+              <div className="date">{dateBuilder(new Date())}</div>
+            </div>
+            <div className="weather-box">
+              <div className="temp">
+                {Math.round(weather.main.temp)}
+                <span>&#176;</span>
+              </div>
+              <div className="weather-flex">
+                <div className="weather">{weather.weather[0].main}</div>
+                <img src={`icons/${weather.weather[0].icon}.png`} alt="" />
+              </div>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </main>
     </div>
   );
