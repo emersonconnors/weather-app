@@ -93,7 +93,10 @@ function App() {
               </div>
               <div className="weather-flex">
                 <div className="weather">{weather.weather[0].main}</div>
-                <img src={`icons/${weather.weather[0].icon}.png`} alt="" />
+                <img
+                  src={require(`./images/${weather.weather[0].icon}.png`)}
+                  alt=""
+                />
               </div>
             </div>
           </div>
