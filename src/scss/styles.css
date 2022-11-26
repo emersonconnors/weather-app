@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 body {
   margin: 0;
+  box-sizing: inherit;
+  padding: 0;
 }
 
 main {
   font-size: 1rem;
   font-family: "Roboto";
   color: white;
+  min-height: 100vh;
 }
 
 h1 {
@@ -39,12 +42,8 @@ p {
   transition: 0.4s ease-out;
 }
 
-main {
-  min-height: 100vh;
-}
-
 .search-box {
-  padding-top: 8rem;
+  padding-top: 5rem;
   text-align: center;
 }
 
@@ -85,10 +84,8 @@ main {
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 50, 0.5);
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 1rem 1.6rem;
   border-radius: 1rem;
   box-shadow: 3px 4px rgba(50, 50, 50, 0.5);
-  position: relative;
   display: block;
   min-width: 250px;
   width: -webkit-fit-content;
@@ -118,7 +115,7 @@ main {
     margin: 0 0.5rem;
   }
   .search-box {
-    padding-top: 7rem;
+    padding-top: 4rem;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -127,6 +124,6 @@ main {
     margin: 0 0.5rem;
   }
   .search-box {
-    padding-top: 4rem;
+    padding-top: 2rem;
   }
 }/*# sourceMappingURL=styles.css.map */
