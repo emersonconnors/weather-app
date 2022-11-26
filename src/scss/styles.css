@@ -22,7 +22,7 @@ p {
 }
 
 .App {
-  background-image: linear-gradient(lightblue, black);
+  background-color: lightgray;
   background-size: cover;
   background-position: bottom;
   position: relative;
@@ -30,12 +30,12 @@ p {
 }
 
 .App.cold {
-  background-image: url("../images/cold-bg.webp");
+  background-color: lightblue;
   transition: 0.4s ease-in;
 }
 
 .App.warm {
-  background-image: url("../images/warm-bg.webp");
+  background-color: orange;
   transition: 0.4s ease-out;
 }
 
@@ -44,7 +44,7 @@ main {
 }
 
 .search-box {
-  padding-top: 10rem;
+  padding-top: 8rem;
   text-align: center;
 }
 
@@ -110,4 +110,23 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 4rem;
+    margin: 0 0.5rem;
+  }
+  .search-box {
+    padding-top: 7rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 4rem;
+    margin: 0 0.5rem;
+  }
+  .search-box {
+    padding-top: 4rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
