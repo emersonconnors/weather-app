@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 body {
   margin: 0;
+  box-sizing: inherit;
+  padding: 0;
 }
 main {
   font-size: 1rem;
   font-family: "Roboto";
   color: white;
+  min-height: 100vh;
 }
 h1 {
   font-size: 5rem;
@@ -17,6 +20,7 @@ p {
   font-weight: 700;
   font-size: 1.5rem;
 }
+
 .App {
   background-color: lightgray;
   background-size: cover;
@@ -31,7 +35,4 @@ p {
 .App.warm {
   background-color: orange;
   transition: 0.4s ease-out;
-}
-main {
-  min-height: 100vh;
 }
